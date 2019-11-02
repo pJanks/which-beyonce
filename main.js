@@ -2,20 +2,23 @@ var startButton = document.querySelector(".start-game");
 var playerOneName = document.querySelector(".player-name");
 var playerTwoName = document.querySelector(".player-two");
 var page = document.querySelector(".intro-main");
-var body = document.querySelector("body");
+var main = document.querySelector("main");
+var card = document.querySelector(".card")
 
 startButton.addEventListener("click", formValidation);
-body.addEventListener("click", startGame)
+page.addEventListener("click", startGame)
+main.addEventListener("click", flipCard)
+// card.addEventListener("click", flipCard)
 
 function formValidation() {
-  if (!playerOneName.value || !playerTwoName.value || playerOneName.value === "ENTER YOUR NAME" || playerTwoName.value === "ENTER YOUR NAME") {
+  if (!playerOneName.value || playerOneName.value === "ENTER YOUR NAME") {
     (playerOneName.value = "ENTER YOUR NAME");
-    (playerTwoName.value = "ENTER YOUR NAME")
+    // (playerTwoName.value = "ENTER YOUR NAME") !playerTwoName.value ||  || playerTwoName.value === "ENTER YOUR NAME"
+
   } else goToInstructions(event);
 }
 
 function goToInstructions(event) {
-  console.log(event);
   event.target.classList.contains("start-game")
   page.innerHTML = `<main class="overview-page">
     <section class="overview-content">
@@ -30,7 +33,6 @@ function goToInstructions(event) {
 }
 
 function startGame (event) {
-  console.log(event)
   if (event.target.classList.contains("overview-button")) {
     page.innerHTML = `<main class="game-page">
       <aside class="left">
@@ -77,5 +79,10 @@ function startGame (event) {
       </aside>
     </main>`
   }
+}
 
+function flipCard(event) {
+  if (event.target.classList.contains("card")){
+    console.log(event);
+  }
 }
