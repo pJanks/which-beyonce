@@ -2,3 +2,124 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
+
+body {
+  margin: auto;
+}
+
+header {
+  height: 90px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 190%;
+  margin: auto;
+  padding-right: 10%;
+  padding-top: 30px;
+}
+
+.line{
+  background-color: #FFF;
+  display: block;
+  height: 5px;
+  margin: 13px auto;
+  margin-top: 13px;
+  margin-left: 10%;
+  width: 75%;
+}
+
+.hamburger {
+  background-color: #000;
+  border: 1px solid #000;
+  float: left;
+  height: 100%;
+  top: 0;
+  width: 7%;
+}
+
+.intro-main {
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
+  background-repeat: no-repeat;
+  background-size: 180% 180%;
+  background-position: center;
+  display: flex;
+
+  display: none;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 250px;
+}
+
+.intro-inputs {
+  display: flex;
+
+  font-size: 140%;
+  text-align: left;
+  width: 60%;
+}
+
+.player-text {
+  margin-top: 5px;
+}
+
+.same-input {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.player-name {
+  font-size: 130%;
+  height: 45px;
+  margin-top: 250px;
+  padding-left: 10px;
+  width: 80%;
+}
+
+.start-game {
+  background-color: #000;
+  color: #FFF;
+  height: 50px;
+  font-size: 140%;
+  margin-top: 155px;
+  width: 60%;
+}
+
+.overview-page {
+  align-items: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
+  background-repeat: no-repeat;
+  background-size: 180% 180%;
+  background-position: center;
+  display: flex;
+
+  display: none;
+
+  flex-direction: column;
+}
+
+.overview-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 220%;
+  width: 52%;
+}
+
+.description {
+  display: block;
+  font-size: 138%;
+  margin-top: 40px;
+}
+
+.welcome {
+  font-size: 173%;
+  margin-top: 100px;
+}
+
+.overview-button {
+  margin-bottom: 55px;
+  width: 100%;
+}
