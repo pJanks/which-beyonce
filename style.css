@@ -7,6 +7,10 @@ body {
   margin: auto;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .main-header {
   height: 90px;
   text-align: center;
@@ -196,9 +200,20 @@ justify-content: center;
   font-size: 800%;
   font-weight: 700;
   height: 150px;
-  margin: 15px 80px 15px 20px;
+  line-height: 120px;
+  margin-right: 80px;
+  padding-top: 10px;
+  perspective: 1000px;
   text-align: center;
   width: 100px;
+}
+
+.card:active {
+  /* background-color: red; */
+}
+
+.card:hover {
+  cursor: pointer;
 }
 
 .card-one {
