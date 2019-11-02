@@ -7,7 +7,7 @@ body {
   margin: auto;
 }
 
-header {
+.main-header {
   height: 90px;
   text-align: center;
 }
@@ -122,4 +122,119 @@ h1 {
 .overview-button {
   margin-bottom: 55px;
   width: 100%;
+}
+
+.left,
+.right {
+  background-color: #000;
+  color: #FFF;
+  padding: 2% 2% 20% 2%;
+  text-align: center;
+  width: 20%;
+}
+
+.top-player {
+  margin-top: 13px;
+}
+
+.score {
+  border-top: 2px solid #FFF;
+  border-bottom: 2px solid #FFF;
+  padding: 25px;
+}
+
+.score-number {
+  font-size: 500%;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 160%;
+  margin: auto;
+}
+
+.aside-text {
+  font-size: 160%;
+  display: block;
+}
+
+.time {
+  display: block;
+}
+
+.one,
+.two {
+  margin-bottom: 30px;
+}
+
+.round-info {
+  margin-top: 30px;
+}
+
+.cards {
+  display: flex;
+  width: 60%;
+}
+
+.game-page {
+  display: flex;
+}
+
+.cards {
+display: flex;
+flex-wrap: wrap;
+
+height: auto;
+justify-content: center;
+}
+
+.card {
+  background-color: #FFF;
+  border: 3px solid #000;
+  font-size: 800%;
+  font-weight: 700;
+  height: 150px;
+  margin: 15px 80px 15px 20px;
+  text-align: center;
+  width: 100px;
+}
+
+.card-one {
+  transform: rotate(-20deg)
+}
+
+.card-two {
+  transform: rotate(15deg)
+}
+
+.card-three {
+  transform: rotate(30deg)
+}
+
+.card-four {
+  transform: rotate(-5deg)
+}
+
+.card-five {
+  transform: rotate(9deg)
+}
+
+.card-six {
+  transform: rotate(-38deg)
+}
+
+.card-seven {
+  transform: rotate(20deg)
+}
+
+.card-eight {
+  transform: rotate(8deg)
+}
+
+.card-nine {
+  transform: rotate(-30deg)
+}
+
+.card-ten {
+  transform: rotate(13deg)
 }
