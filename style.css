@@ -178,6 +178,8 @@ h3 {
 
 .game-page {
   display: flex;
+
+  display: none;
 }
 
 .cards {
@@ -237,4 +239,46 @@ justify-content: center;
 
 .card-ten {
   transform: rotate(13deg)
+}
+
+.winner-page {
+  align-items: center;
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
+  background-repeat: no-repeat;
+  background-size: 180% 180%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.congrats {
+  font-size: 200%;
+  margin-top: 150px;
+}
+
+.final-time {
+  font-size: 150%;
+  font-weight: 700;
+  margin-bottom: 80px;
+  margin-top: 40px;
+}
+
+.to-restart {
+  font-size: 145%;
+  margin-bottom: 70px;
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 170px;
+  width: 65%;
+}
+
+.btn {
+  background-color: #000;
+  color: #FFF;
+  font-size: 135%;
+  height: 50px;
+  width: 38%;
 }
