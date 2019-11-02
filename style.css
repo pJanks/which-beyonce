@@ -41,15 +41,15 @@ h1 {
 .intro-main {
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
   background-repeat: no-repeat;
-  background-size: 180% 180%;
+  background-size: 150% 150%;
   background-position: center;
   display: flex;
 
-  display: none;
+  /* display: none; */
 
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 250px;
+  padding-bottom: 200px;
 }
 
 .intro-inputs {
@@ -89,13 +89,13 @@ h1 {
 
 .overview-page {
   align-items: center;
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
+  /* background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
   background-repeat: no-repeat;
-  background-size: 180% 180%;
+  background-size: 180% 180%; */
   background-position: center;
   display: flex;
 
-  display: none;
+  /* display: none; */
 
   flex-direction: column;
 }
@@ -179,7 +179,7 @@ h3 {
 .game-page {
   display: flex;
 
-  display: none;
+  /* display: none; */
 }
 
 .cards {
@@ -248,6 +248,9 @@ justify-content: center;
   background-size: 180% 180%;
   background-position: center;
   display: flex;
+
+  display: none;
+
   flex-direction: column;
 }
 
