@@ -8,16 +8,14 @@ var card = document.querySelector(".card")
 startButton.addEventListener("click", formValidation);
 page.addEventListener("click", startGame)
 main.addEventListener("click", flipCard)
-// card.addEventListener("click", flipCard)
 
 function formValidation() {
   if (!playerOneName.value || playerOneName.value === "ENTER YOUR NAME") {
     (playerOneName.value = "ENTER YOUR NAME");
     // (playerTwoName.value = "ENTER YOUR NAME") !playerTwoName.value ||  || playerTwoName.value === "ENTER YOUR NAME"
-
   } else goToInstructions(event);
 }
-
+// kdkd
 function goToInstructions(event) {
   event.target.classList.contains("start-game")
   page.innerHTML = `<main class="overview-page">
@@ -51,16 +49,27 @@ function startGame (event) {
         </footer>
       </aside>
       <section class="cards">
-        <div class="card-one card">B</div>
-        <div class="card-two card">B</div>
-        <div class="card-three card">B</div>
-        <div class="card-four card">B</div>
-        <div class="card-five card">B</div>
-        <div class="card-six card">B</div>
-        <div class="card-seven card">B</div>
-        <div class="card-eight card">B</div>
-        <div class="card-nine card">B</div>
-        <div class="card-ten card">B</div>
+        <div class="card-one-front card">B</div>
+        <div class="card-one-back card"></div>
+        <div class="card-two-front card">B</div>
+        <div class="card-two-back card"></div>
+        <div class="card-three-front card">B</div>
+        <div class="card-three-back card"></div>
+        <div class="card-four-front card">B</div>
+        <div class="card-four-back card"></div>
+        <div class="card-five-front card">B</div>
+        <div class="card-five-back card"></div>
+        <div class="card-six-front card">B</div>
+        <div class="card-six-back card"></div>
+        <div class="card-seven-front card">B</div>
+        <div class="card-seven-back card"></div>
+        <div class="card-eight-front card">B</div>
+        <div class="card-eight-back card"></div>
+        <div class="card-nine-front card">B</div>
+        <div class="card-nine-back card"></div>
+        <div class="card-ten-front card">B</div>
+        <div class="card-ten-back card"></div>
+
       </section>
       <aside class="right">
         <header class="game-header two">
