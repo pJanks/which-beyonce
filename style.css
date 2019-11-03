@@ -93,14 +93,8 @@ h1 {
 
 .overview-page {
   align-items: center;
-  /* background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
-  background-repeat: no-repeat;
-  background-size: 180% 180%; */
   background-position: center;
   display: flex;
-
-  /* display: none; */
-
   flex-direction: column;
 }
 
@@ -177,14 +171,12 @@ h3 {
 
 .cards {
   display: flex;
-  width: 60%;
+
 }
 
 .game-page {
   display: flex;
   width: 100%;
-
-  /* display: none; */
 }
 
 .cards {
@@ -206,7 +198,7 @@ h3 {
   margin-right: 80px;
   margin-top: 40px;
   padding-top: 10px;
-  perspective: 1000px;
+  /* perspective: 1000px; */
   text-align: center;
   width: 100px;
 }
@@ -221,7 +213,7 @@ h3 {
   cursor: pointer;
 }
 
-.card-one-front {
+.card-0-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -230,7 +222,7 @@ h3 {
   transform: rotate(-20deg)
 }
 
-.card-one-back {
+.card-0-back {
   backface-visibility: hidden;
 	position: absolute;
   top: 0;
@@ -242,7 +234,7 @@ h3 {
   transform: rotate(-20deg)
 }
 
-.card-two-front {
+.card-1-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -251,7 +243,7 @@ h3 {
   transform: rotate(15deg);
 }
 
-.card-two-back {
+.card-1-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -263,7 +255,7 @@ h3 {
   transform: rotate(15deg);
 }
 
-.card-three-front {
+.card-2-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -272,7 +264,7 @@ h3 {
   transform: rotate(30deg);
 }
 
-.card-three-back {
+.card-2-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -284,7 +276,7 @@ h3 {
   transform: rotate(30deg);
 }
 
-.card-four-front {
+.card-3-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -293,7 +285,7 @@ h3 {
   transform: rotate(-5deg);
 }
 
-.card-four-back {
+.card-3-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -305,7 +297,7 @@ h3 {
   transform: rotate(-5deg);
 }
 
-.card-five-front {
+.card-4-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -314,7 +306,7 @@ h3 {
   transform: rotate(9deg);
 }
 
-.card-five-back {
+.card-4-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 25%;
@@ -326,7 +318,7 @@ h3 {
   transform: rotate(9deg);
 }
 
-.card-six-front {
+.card-5-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -335,7 +327,7 @@ h3 {
   transform: rotate(-38deg);
 }
 
-.card-six-back {
+.card-5-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 25%;
@@ -347,7 +339,7 @@ h3 {
   transform: rotate(-38deg);
 }
 
-.card-seven-front {
+.card-6-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -356,7 +348,7 @@ h3 {
   transform: rotate(20deg);
 }
 
-.card-seven-back {
+.card-6-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 50%;
@@ -368,7 +360,7 @@ h3 {
   transform: rotate(20deg);
 }
 
-.card-eight-front {
+.card-7-front {
   backface-visibility: hidden;
 	position: absolute;
 	top: 50%;
@@ -377,7 +369,7 @@ h3 {
   z-index: 2;
 }
 
-.card-eight-back {
+.card-7-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 50%;
@@ -389,7 +381,7 @@ h3 {
   transform: rotate(8deg);
 }
 
-.card-nine-front {
+.card-8-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -398,7 +390,7 @@ h3 {
   transform: rotate(-30deg);
 }
 
-.card-nine-back {
+.card-8-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 50%;
@@ -410,7 +402,7 @@ h3 {
   transform: rotate(-30deg);
 }
 
-.card-ten-front {
+.card-9-front {
   backface-visibility: hidden;
   z-index: 2;
 	position: absolute;
@@ -419,7 +411,7 @@ h3 {
   transform: rotate(13deg);
 }
 
-.card-ten-back {
+.card-9-back {
   backface-visibility: hidden;
 	position: absolute;
 	top: 50%;
