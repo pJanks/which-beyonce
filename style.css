@@ -182,16 +182,18 @@ h3 {
 
 .game-page {
   display: flex;
+  width: 100%;
 
   /* display: none; */
 }
 
 .cards {
-display: flex;
-flex-wrap: wrap;
-
-height: auto;
-justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  height: auto;
+  justify-content: center;
+  width: 60%;
 }
 
 .card {
@@ -202,6 +204,7 @@ justify-content: center;
   height: 150px;
   line-height: 120px;
   margin-right: 80px;
+  margin-top: 40px;
   padding-top: 10px;
   perspective: 1000px;
   text-align: center;
@@ -209,51 +212,223 @@ justify-content: center;
 }
 
 .card:active {
-  /* background-color: red; */
+  transition: 0.3s;
+	transform-style: preserve-3d;
+  transform: rotateY(180deg);
 }
 
 .card:hover {
   cursor: pointer;
 }
 
-.card-one {
+.card-one-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 5%;
   transform: rotate(-20deg)
 }
 
-.card-two {
-  transform: rotate(15deg)
+.card-one-back {
+  backface-visibility: hidden;
+	position: absolute;
+  top: 0;
+	left: 5%;
+  background-image: url("assets/bey1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(-20deg)
 }
 
-.card-three {
-  transform: rotate(30deg)
+.card-two-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 30%;
+  transform: rotate(15deg);
 }
 
-.card-four {
-  transform: rotate(-5deg)
+.card-two-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 30%;
+  background-image: url("assets/bey1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(15deg);
 }
 
-.card-five {
-  transform: rotate(9deg)
+.card-three-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 0;
+  left: 55%;
+  transform: rotate(30deg);
 }
 
-.card-six {
-  transform: rotate(-38deg)
+.card-three-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+  left: 55%;
+  background-image: url("assets/bey2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(30deg);
 }
 
-.card-seven {
-  transform: rotate(20deg)
+.card-four-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 0;
+  left: 80%;
+  transform: rotate(-5deg);
 }
 
-.card-eight {
-  transform: rotate(8deg)
+.card-four-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+  left: 80%;
+  background-image: url("assets/bey2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(-5deg);
 }
 
-.card-nine {
-  transform: rotate(-30deg)
+.card-five-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 25%;
+  left: 18%;
+  transform: rotate(9deg);
 }
 
-.card-ten {
-  transform: rotate(13deg)
+.card-five-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 25%;
+  left: 18%;
+  background-image: url("assets/bey3.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(9deg);
+}
+
+.card-six-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 25%;
+  left: 68%;
+  transform: rotate(-38deg);
+}
+
+.card-six-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 25%;
+  left: 68%;
+  background-image: url("assets/bey3.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(-38deg);
+}
+
+.card-seven-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 50%;
+  left: 5%;
+  transform: rotate(20deg);
+}
+
+.card-seven-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 50%;
+  left: 5%;
+  background-image: url("assets/bey4.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(20deg);
+}
+
+.card-eight-front {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+.card-eight-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+  background-image: url("assets/bey4.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(8deg);
+}
+
+.card-nine-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 50%;
+  left: 55%;
+  transform: rotate(-30deg);
+}
+
+.card-nine-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 50%;
+  left: 55%;
+  background-image: url("assets/bey5.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(-30deg);
+}
+
+.card-ten-front {
+  backface-visibility: hidden;
+  z-index: 2;
+	position: absolute;
+	top: 50%;
+  left: 80%;
+  transform: rotate(13deg);
+}
+
+.card-ten-back {
+  backface-visibility: hidden;
+	position: absolute;
+	top: 50%;
+  left: 80%;
+  background-image: url("assets/bey5.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  transform: rotate(13deg);
 }
 
 .winner-page {
