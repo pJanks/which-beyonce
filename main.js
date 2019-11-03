@@ -4,10 +4,11 @@ var playerTwoName = document.querySelector(".player-two");
 var page = document.querySelector(".intro-main");
 var main = document.querySelector("main");
 var card = document.querySelector(".card")
+var gameCards = [];
 
 startButton.addEventListener("click", formValidation);
 page.addEventListener("click", startGame)
-main.addEventListener("click", flipCard)
+// main.addEventListener("click", flipCard)
 
 function formValidation() {
   if (!playerOneName.value || playerOneName.value === "ENTER YOUR NAME") {
@@ -15,7 +16,7 @@ function formValidation() {
     // (playerTwoName.value = "ENTER YOUR NAME") !playerTwoName.value ||  || playerTwoName.value === "ENTER YOUR NAME"
   } else goToInstructions(event);
 }
-// kdkd
+
 function goToInstructions(event) {
   event.target.classList.contains("start-game")
   page.innerHTML = `<main class="overview-page">
@@ -30,8 +31,23 @@ function goToInstructions(event) {
   page.style.padding = "0px";
 }
 
+function createInstance() {
+  // debugger;
+  for (var i = 0; i < 10; i++) {
+  var beyCard = new Card(i);
+  gameCards.push(beyCard);
+}
+  console.log(gameCards)
+  // gameCards.beyCard[i].matchInfo = i;
+  console.log(gameCards);
+  return gameCards;
+}
+
+
 function startGame (event) {
   if (event.target.classList.contains("overview-button")) {
+    var newCard = createInstance();
+
     page.innerHTML = `<main class="game-page">
       <aside class="left">
         <header class="game-header one">
@@ -49,26 +65,27 @@ function startGame (event) {
         </footer>
       </aside>
       <section class="cards">
-        <div class="card-one-front card">B</div>
-        <div class="card-one-back card"></div>
-        <div class="card-two-front card">B</div>
-        <div class="card-two-back card"></div>
-        <div class="card-three-front card">B</div>
-        <div class="card-three-back card"></div>
-        <div class="card-four-front card">B</div>
-        <div class="card-four-back card"></div>
-        <div class="card-five-front card">B</div>
-        <div class="card-five-back card"></div>
-        <div class="card-six-front card">B</div>
-        <div class="card-six-back card"></div>
-        <div class="card-seven-front card">B</div>
-        <div class="card-seven-back card"></div>
-        <div class="card-eight-front card">B</div>
-        <div class="card-eight-back card"></div>
-        <div class="card-nine-front card">B</div>
-        <div class="card-nine-back card"></div>
-        <div class="card-ten-front card">B</div>
-        <div class="card-ten-back card"></div>
+
+      <div class="card-${newCard[0].matchInfo}-front card">B</div>
+      <div class="card-${newCard[0].matchInfo}-back card"></div>
+      <div class="card-${newCard[1].matchInfo}-front card">B</div>
+      <div class="card-${newCard[1].matchInfo}-back card"></div>
+      <div class="card-${newCard[2].matchInfo}-front card">B</div>
+      <div class="card-${newCard[2].matchInfo}-back card"></div>
+      <div class="card-${newCard[3].matchInfo}-front card">B</div>
+      <div class="card-${newCard[3].matchInfo}-back card"></div>
+      <div class="card-${newCard[4].matchInfo}-front card">B</div>
+      <div class="card-${newCard[4].matchInfo}-back card"></div>
+      <div class="card-${newCard[5].matchInfo}-front card">B</div>
+      <div class="card-${newCard[5].matchInfo}-back card"></div>
+      <div class="card-${newCard[6].matchInfo}-front card">B</div>
+      <div class="card-${newCard[6].matchInfo}-back card"></div>
+      <div class="card-${newCard[7].matchInfo}-front card">B</div>
+      <div class="card-${newCard[7].matchInfo}-back card"></div>
+      <div class="card-${newCard[8].matchInfo}-front card">B</div>
+      <div class="card-${newCard[8].matchInfo}-back card"></div>
+      <div class="card-${newCard[9].matchInfo}-front card">B</div>
+      <div class="card-${newCard[9].matchInfo}-back card"></div>
 
       </section>
       <aside class="right">
@@ -87,11 +104,15 @@ function startGame (event) {
         </footer>
       </aside>
     </main>`
-  }
+
+  } console.log(gameCards);
 }
 
-function flipCard(event) {
-  if (event.target.classList.contains("card")){
-    console.log(event);
-  }
-}
+
+
+
+// function flipCard(event) {
+//   if (event.target.classList.contains("card").matchInfo === event.target.classList.contains("card").matchInfo){
+//     console.log(event);
+//   }
+// }
