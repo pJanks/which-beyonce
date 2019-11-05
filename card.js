@@ -1,15 +1,11 @@
 class Card {
-  constructor(matchInfo) {
-    // this.name = `card-${matchinfo}-${side}`
+  constructor(matchInfo, id) {
     this.matchInfo = matchInfo;
-    this.id = Date.now();
+    this.id = id;
     this.matched = false;
-
   }
 
-  // match(matchInfo) {
-  // if(matchInfo === matchInfo)
-  // console.log(matchInfo);
-  //
-  // }
+  match() {
+
+  }
 }
