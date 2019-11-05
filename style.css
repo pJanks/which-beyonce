@@ -5,6 +5,10 @@
 
 body {
   margin: auto;
+
+
+  --toggle: 1;
+  --playState: "running";
 }
 
 button:hover {
@@ -48,9 +52,6 @@ h1 {
   background-size: 150% 150%;
   background-position: center;
   display: flex;
-
-  /* display: none; */
-
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 200px;
@@ -185,6 +186,7 @@ h3 {
   position: relative;
   height: auto;
   justify-content: center;
+  perspective: 1000px;
   width: 60%;
 }
 
@@ -198,19 +200,23 @@ h3 {
   margin-right: 80px;
   margin-top: 40px;
   padding-top: 10px;
-  /* perspective: 1000px; */
   text-align: center;
+  transform-style: preserve-3d;
+  transition: transform .5s;
   width: 100px;
 }
 
-.card:active {
-  transition: 0.3s;
-	transform-style: preserve-3d;
+.card.flip {
   transform: rotateY(180deg);
+
 }
 
 .card:hover {
   cursor: pointer;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 .card-0-front {
@@ -219,7 +225,7 @@ h3 {
 	position: absolute;
 	top: 0;
 	left: 5%;
-  transform: rotate(-20deg)
+  transform: rotate(-20deg);
 }
 
 .card-0-back {
@@ -231,7 +237,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
-  transform: rotate(-20deg)
+  transform: rotate(-20deg);
 }
 
 .card-1-front {
@@ -248,7 +254,7 @@ h3 {
 	position: absolute;
 	top: 0;
 	left: 30%;
-  background-image: url("assets/bey1.jpg");
+  background-image: url("assets/bey2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -269,7 +275,7 @@ h3 {
 	position: absolute;
 	top: 0;
   left: 55%;
-  background-image: url("assets/bey2.jpg");
+  background-image: url("assets/bey3.jpeg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -290,7 +296,7 @@ h3 {
 	position: absolute;
 	top: 0;
   left: 80%;
-  background-image: url("assets/bey2.jpg");
+  background-image: url("assets/bey4.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
@@ -311,115 +317,40 @@ h3 {
 	position: absolute;
 	top: 25%;
   left: 18%;
-  background-image: url("assets/bey3.jpeg");
+  background-image: url("assets/bey5.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: center;
   transform: rotate(9deg);
 }
 
-.card-5-front {
-  backface-visibility: hidden;
-  z-index: 2;
-	position: absolute;
+.match-zero {
 	top: 25%;
   left: 68%;
   transform: rotate(-38deg);
 }
 
-.card-5-back {
-  backface-visibility: hidden;
-	position: absolute;
-	top: 25%;
-  left: 68%;
-  background-image: url("assets/bey3.jpeg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  transform: rotate(-38deg);
-}
-
-.card-6-front {
-  backface-visibility: hidden;
-  z-index: 2;
-	position: absolute;
+.match-one {
 	top: 50%;
   left: 5%;
   transform: rotate(20deg);
 }
 
-.card-6-back {
-  backface-visibility: hidden;
-	position: absolute;
-	top: 50%;
-  left: 5%;
-  background-image: url("assets/bey4.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  transform: rotate(20deg);
-}
-
-.card-7-front {
-  backface-visibility: hidden;
-	position: absolute;
+.match-two {
 	top: 50%;
 	left: 30%;
   transform: rotate(8deg);
-  z-index: 2;
 }
 
-.card-7-back {
-  backface-visibility: hidden;
-	position: absolute;
-	top: 50%;
-	left: 30%;
-  background-image: url("assets/bey4.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  transform: rotate(8deg);
-}
-
-.card-8-front {
-  backface-visibility: hidden;
-  z-index: 2;
-	position: absolute;
+.match-three {
 	top: 50%;
   left: 55%;
   transform: rotate(-30deg);
 }
 
-.card-8-back {
-  backface-visibility: hidden;
-	position: absolute;
-	top: 50%;
-  left: 55%;
-  background-image: url("assets/bey5.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  transform: rotate(-30deg);
-}
-
-.card-9-front {
-  backface-visibility: hidden;
-  z-index: 2;
-	position: absolute;
+.match-four {
 	top: 50%;
   left: 80%;
-  transform: rotate(13deg);
-}
-
-.card-9-back {
-  backface-visibility: hidden;
-	position: absolute;
-	top: 50%;
-  left: 80%;
-  background-image: url("assets/bey5.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
   transform: rotate(13deg);
 }
 
@@ -430,10 +361,8 @@ h3 {
   background-size: 180% 180%;
   background-position: center;
   display: flex;
-
-  display: none;
-
   flex-direction: column;
+  width: 100%;
 }
 
 .congrats {
