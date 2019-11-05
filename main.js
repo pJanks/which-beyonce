@@ -7,6 +7,8 @@ var gameCards = [];
 var newDeck;
 var startTime;
 var endTime;
+var newPlayer;
+var convertedTime;
 
 
 startButton.addEventListener("click", formValidation);
@@ -28,9 +30,9 @@ function flipCard(event) {
   if (newDeck.selectedCards.length >= 2 || event.target.classList.contains("back")) {
     return;
   } else if (event.target.classList.contains("card")) {
-    console.log(event)
-    console.log(newDeck)
-    console.log(event.target)
+    // console.log(event)
+    // console.log(newDeck)
+    // console.log(event.target)
     event.target.classList.add("flip");
     var cardsDoMatch = newDeck.checkSelectedCards(event.target.dataset.id);
     if (cardsDoMatch === true) {
@@ -60,7 +62,12 @@ function removeMatchedCards() {
     cardOne[i].remove();
     cardTwo[i].remove();
     endTime = Date.now();
+  } if (newDeck.matchedCards.length === 10) {
     winPage();
+    newPlayer = new Player(playerOneName.value, convertedTime);
+    newPlayer.saveToLocal()
+    console.log(newPlayer)
+
   }
 }
 
@@ -90,21 +97,20 @@ function goToInstructions(event) {
 function timeConvert(time) {
   var min = Math.floor(time / 60000);
   var sec = ((time % 60000) / 1000).toFixed(0);
-  return (seconds == 60 ? (minutes+1) + ":00" : minutes + ":" + (seconds < 10 ? "0" : "") + seconds);
+  convertedTime = (sec == 60 ? (min+1) + ":00" : min + ":" + (sec < 10 ? "0" : "") + sec);
+  return convertedTime;
 }
 
 function winPage() {
-  if (newDeck.matchedCards.length === 10) {
     main.innerHTML = `<main class="winner-page">
       <h2 class="congrats">CONGRATULATIONS, ${playerOneName.value.toUpperCase()} WINS!</h2>
-      <span class="final-time">It took you ${timeConvert(endDate - startDate)} seconds.</span>
+      <span class="final-time">It took you ${timeConvert(endTime - startTime)} to win!</span>
       <span class="to-restart">Click below to keep playing.</span>
       <div class="game-buttons">
         <button class="new-game btn">NEW GAME</button>
         <button class="rematch btn">REMATCH</button>
       </div>
     </main>`
-  } else return;
 }
 
 function createInstance() {
