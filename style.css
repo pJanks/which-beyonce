@@ -20,7 +20,6 @@ button:hover {
 h1 {
   font-size: 190%;
   margin: auto;
-  padding-right: 10%;
   padding-top: 30px;
   width: 80%
 }
@@ -30,8 +29,8 @@ h1 {
   display: block;
   height: 5px;
   margin: 13px auto;
-  margin-top: 13px;
   margin-left: 10%;
+  margin-top: 13px;
   width: 75%;
 }
 
@@ -52,17 +51,15 @@ h4 {
   border: 1px solid #FFF;
   display: block;
   margin: 5px 5% 10px 5%;
-  /* margin-bottom: 10px;
-  margin-top: 5px; */
   text-align: center;
   width: 90%;
 }
 
 .dropdown-box {
-  display: none;
   background-color: #000;
   border: 2px solid #000;
   color: #FFF;
+  display: none;
   font-size: 200%;
   height: auto;
   position: absolute;
@@ -77,9 +74,9 @@ h4 {
 
 .intro-main {
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 150% 150%;
-  background-position: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,8 +85,8 @@ h4 {
 
 .intro-inputs {
   display: flex;
-  justify-content: center;
   font-size: 140%;
+  justify-content: center;
   text-align: left;
   width: 100%;
 }
@@ -100,12 +97,6 @@ h4 {
 
 .player-text {
   margin-top: 5px;
-}
-
-.same-input {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
 }
 
 .player-name {
@@ -119,8 +110,8 @@ h4 {
 .start-game {
   background-color: #000;
   color: #FFF;
-  height: 50px;
   font-size: 140%;
+  height: 50px;
   margin-top: 155px;
   width: 60%;
 }
@@ -156,21 +147,10 @@ h4 {
   width: 100%;
 }
 
-.left{
-  background-color: #000;
-  color: #FFF;
-  padding: 2% 2% 20% 2%;
-  text-align: center;
-  width: 25%;
-}
-
-.top-player {
-  margin-top: 13px;
-}
-
 .score {
   border-top: 2px solid #FFF;
   border-bottom: 2px solid #FFF;
+  margin-bottom: 30px;
   padding: 25px;
 }
 
@@ -184,28 +164,27 @@ h3 {
   margin: auto;
 }
 
+aside {
+  background-color: #000;
+  color: #FFF;
+  padding: 2% 2% 20% 2%;
+  text-align: center;
+  width: 25%;
+}
+
 .aside-text {
-  font-size: 160%;
   display: block;
+  font-size: 160%;
+  margin-top: 13px;
 }
 
 .time {
   display: block;
 }
 
-.one,
-.two {
-  margin-bottom: 30px;
-}
-
-.right {
-  display: none;
-}
-
 .round-info {
   margin-top: 30px;
 }
-
 
 .game-page {
   display: flex;
@@ -253,7 +232,6 @@ h3 {
 
 .back {
   position: absolute;
-  transform: rotateY(180deg);
 }
 
 .card-container {
@@ -358,10 +336,6 @@ h3 {
 
 .winner-page {
   align-items: center;
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/beyonce-cob-bw.png");
-  background-repeat: no-repeat;
-  background-size: 180% 180%;
-  background-position: center;
   display: flex;
   flex-direction: column;
   width: 100%;

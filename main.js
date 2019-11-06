@@ -124,7 +124,7 @@ function winPage() {
       <span class="final-time">It took you ${timeConvert(endTime - startTime)} to win!</span>
       <span class="to-restart">Click below to keep playing.</span>
       <div class="game-buttons">
-        <button class="new-game btn">NEW GAME</button>
+        <button class="btn">NEW GAME</button>
       </div>
     </main>`
 }
@@ -173,12 +173,12 @@ function startGame (event) {
   var newCard = createInstance();
   var randomDivs = makeCardDivs(newCard);
   page.innerHTML = `<main class="game-page">
-    <aside class="left">
+    <aside>
       <header class="game-header one">
         <h3>${playerOneName.value}</h3>
-        <span class="top-player aside-text">#4 TOP PLAYER</span>
+        <span class="taside-text">#4 TOP PLAYER</span>
       </header>
-      <section class="score one">
+      <section class="score">
         <span class="aside-text">MATCHES THIS ROUND</span>
         <span class="score-number">${newDeck.matches}</span>
       </section>
