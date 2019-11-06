@@ -33,7 +33,7 @@ function checkLocalStorage() {
 }
 
 function clickHandler(event) {
-  if (event.target.classList.contains("overview-button")) {
+  if (event.target.classList.contains("overview-button") || event.target.classList.contains("btn")) {
     startTime = Date.now();
     startGame(event);
   } if (event.target.classList.contains("card")) {
@@ -125,7 +125,6 @@ function winPage() {
       <span class="to-restart">Click below to keep playing.</span>
       <div class="game-buttons">
         <button class="new-game btn">NEW GAME</button>
-        <button class="rematch btn">REMATCH</button>
       </div>
     </main>`
 }
@@ -184,9 +183,6 @@ function startGame (event) {
         <span class="score-number">${newDeck.matches}</span>
       </section>
       <footer>
-        <h3>GAME WINS</h3>
-        <div class="round-info"><span class="aside-text">ROUND 1</span><span class="aside-text time">1000 MINUTES</span></div>
-        <div class="round-info"><span class="aside-text">ROUND 1</span><span class="aside-text time">1000 MINUTES</span></div>
       </footer>
     </aside>
     <section class="cards">
@@ -200,7 +196,6 @@ function startGame (event) {
     ${randomDivs[7]}
     ${randomDivs[8]}
     ${randomDivs[9]}
-
     </section>
   </main>`
 }
