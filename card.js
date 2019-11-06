@@ -4,8 +4,4 @@ class Card {
     this.id = id;
     this.matched = false;
   }
-
-  match() {
-
-  }
 }

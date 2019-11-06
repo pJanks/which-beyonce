@@ -1,17 +1,18 @@
-var startButton = document.querySelector(".start-game");
+var box = document.querySelector(".dropdown-box");
+var convertedTime;
+var endTime;
+var hamburger = document.querySelector(".hamburger")
+var main = document.querySelector("main");
+var newDeck;
+// var newPlayer;
+var page = document.querySelector(".intro-main");
 var playerOneName = document.querySelector(".player-name");
 var playerTwoName = document.querySelector(".player-two");
-var page = document.querySelector(".intro-main");
-var main = document.querySelector("main");
-var hamburger = document.querySelector(".hamburger")
-var gameCards = [];
-var newDeck;
+var startButton = document.querySelector(".start-game");
 var startTime;
-var endTime;
-var newPlayer;
-var convertedTime;
+
 var topPlayer = [];
-var box = document.querySelector(".dropdownBox");
+var gameCards = [];
 
 
 
@@ -28,7 +29,6 @@ function checkLocalStorage() {
     var item = JSON.parse(localStorage.getItem(id));
     item = new Player(item.name, item.time, item.id);
     topPlayer.push(item);
-    // console.log(topPlayer);
   }
 }
 
@@ -38,19 +38,14 @@ function clickHandler(event) {
     startGame(event);
   } if (event.target.classList.contains("card")) {
     flipCard(event);
+  } if (event.target.classList.contains("hamburger")) {
+    dropdownBox();
   }
 }
 
 function dropdownBox() {
-  console.log(box)
+  var text = document.querySelector("top-winner")
   box.classList.toggle("show");
-  for (var i = 0; i < topPlayer.length || 5; i++)
-  box.innerHTML =
-
-  `
-  <!-- <h4>TOP 5 WINNERS</h4> -->
-  <span class ="top ${i}">${topPlayer[i].name} - ${topPlayer[i].time}</span>
-  `
 }
 
 function flipCard(event) {
@@ -82,9 +77,6 @@ function reflipCards() {
 function removeMatchedCards() {
   var cardOne = document.querySelectorAll(`[data-id='${newDeck.matchedCards[0].id}']`)
   var cardTwo = document.querySelectorAll(`[data-id='${newDeck.matchedCards[1].id}']`)
-  console.log(cardOne);
-  console.log(cardTwo);
-  console.log(newDeck.matchedCards)
   for (var i = 0; i < 4; i++) {
     cardOne[i].remove();
     cardTwo[i].remove();
@@ -171,37 +163,16 @@ function makeCardDivs(newCard) {
       <div class="card-${i}-front front match-${i} card" data-id="${i}">B</div>
       <div class="card-${i}-back back match-${i} card" data-id="${i}"></div>
     </div>`
-
     );
   }
   var allDivs = cardDivs;
-  console.log(allDivs);
-  return shuffle(allDivs);
-
-}
-
-function shuffle(cardDivs) {
-  var currentIndex = cardDivs.length, temporaryValue, randomIndex;
-
-  while (0 !== currentIndex) {
-
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    temporaryValue = cardDivs[currentIndex];
-    cardDivs[currentIndex] = cardDivs[randomIndex];
-    cardDivs[randomIndex] = temporaryValue;
-  }
-
-  return cardDivs;
+  return newDeck.shuffle(allDivs);
 }
 
 function startGame (event) {
-
   hideTopFive();
   var newCard = createInstance();
   var randomDivs = makeCardDivs(newCard);
-  console.log(randomDivs)
   page.innerHTML = `<main class="game-page">
     <aside class="left">
       <header class="game-header one">
@@ -231,41 +202,5 @@ function startGame (event) {
     ${randomDivs[9]}
 
     </section>
-    <!-- <aside class="right">
-      <header class="game-header two">
-        <h3></h3>
-        <span class="top-player aside-text"></span>
-      </header>
-      <section class="score two">
-        <span class="aside-text">MATCHES THIS ROUND</span>
-        <span class="score-number">5</span>
-      </section>
-      <footer>
-        <h3>GAME WINS</h3>
-        <div class="round-info"><span class="aside-text">ROUND 1</span><span class="aside-text time">1000 MINUTES</span></div>
-        <div class="round-info"><span class="aside-text">ROUND 1</span><span class="aside-text time">1000 MINUTES</span></div>
-      </footer>
-    </aside> -->
   </main>`
 }
-//
-// <div class="card-${newCard[0].matchInfo}-front front card" data-id="0">B</div>
-// <div class="card-${newCard[0].matchInfo}-back back card" data-id="0"></div>
-// <div class="card-${newCard[1].matchInfo}-front front match-zero card" data-id="1">B</div>
-// <div class="card-${newCard[1].matchInfo}-back back match-zero card" data-id="1"></div>
-// <div class="card-${newCard[2].matchInfo}-front front card" data-id="2">B</div>
-// <div class="card-${newCard[2].matchInfo}-back back card" data-id="2"></div>
-// <div class="card-${newCard[3].matchInfo}-front front match-one card" data-id="3">B</div>
-// <div class="card-${newCard[3].matchInfo}-back back match-one card" data-id="3"></div>
-// <div class="card-${newCard[4].matchInfo}-front front card" data-id="4">B</div>
-// <div class="card-${newCard[4].matchInfo}-back back card" data-id="4"></div>
-// <div class="card-${newCard[5].matchInfo}-front front match-two card" data-id="5">B</div>
-// <div class="card-${newCard[5].matchInfo}-back back match-two card" data-id="5"></div>
-// <div class="card-${newCard[6].matchInfo}-front front card" data-id="6">B</div>
-// <div class="card-${newCard[6].matchInfo}-back back card" data-id="6"></div>
-// <div class="card-${newCard[7].matchInfo}-front front match-three card" data-id="7">B</div>
-// <div class="card-${newCard[7].matchInfo}-back back match-three card" data-id="7"></div>
-// <div class="card-${newCard[8].matchInfo}-front front card" data-id="8">B</div>
-// <div class="card-${newCard[8].matchInfo}-back back card" data-id="8"></div>
-// <div class="card-${newCard[9].matchInfo}-front front match-four card" data-id="9">B</div>
-// <div class="card-${newCard[9].matchInfo}-back back match-four card" data-id="9"></div>

@@ -4,6 +4,7 @@ class Player {
     this.name = name;
     this.time = time;
   }
+  
   saveToLocal() {
     localStorage.setItem(JSON.stringify(this.id), JSON.stringify(this));
   }

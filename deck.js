@@ -6,8 +6,16 @@ class Deck {
     this.matches = 0;
   }
 
-  shuffle() {
-
+  shuffle(cardDivs) {
+    var currentIndex = cardDivs.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = cardDivs[currentIndex];
+      cardDivs[currentIndex] = cardDivs[randomIndex];
+      cardDivs[randomIndex] = temporaryValue;
+    }
+    return cardDivs;
   }
 
   checkSelectedCards(id) {
@@ -15,23 +23,15 @@ class Deck {
       if (card.id === Number(id)) {
         return card
       }
-    })
+    });
     if (this.selectedCards.length < 2) {
       this.selectedCards.push(selectedCard)
     }
     if (this.selectedCards.length === 2 && this.selectedCards[0].id === this.selectedCards[1].id) {
-
       this.matchedCards = this.selectedCards.concat(this.matchedCards);
       this.matches += 1;
       this.selectedCards = []
-      console.log(this.selectedCards, 'select');
-      console.log(this.matchedCards, 'match');
       return true;
     } return false;
-
-  }
-
-  moveToMatched() {
-
   }
 }
