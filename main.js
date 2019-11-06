@@ -4,7 +4,6 @@ var endTime;
 var hamburger = document.querySelector(".hamburger")
 var main = document.querySelector("main");
 var newDeck;
-// var newPlayer;
 var page = document.querySelector(".intro-main");
 var playerOneName = document.querySelector(".player-name");
 var playerTwoName = document.querySelector(".player-two");
@@ -14,14 +13,11 @@ var startTime;
 var topPlayer = [];
 var gameCards = [];
 
-
-
 startButton.addEventListener("click", formValidation);
 page.addEventListener("click", clickHandler)
 hamburger.addEventListener("click", dropdownBox)
 
 window.onload = checkLocalStorage();
-
 
 function checkLocalStorage() {
   for (var i = 0; i < localStorage.length; i++) {
@@ -91,7 +87,6 @@ function removeMatchedCards() {
 function formValidation() {
   if (!playerOneName.value || playerOneName.value === "ENTER YOUR NAME") {
     (playerOneName.value = "ENTER YOUR NAME");
-    // (playerTwoName.value = "ENTER YOUR NAME") !playerTwoName.value ||  || playerTwoName.value === "ENTER YOUR NAME"
   } else goToInstructions(event);
 }
 
